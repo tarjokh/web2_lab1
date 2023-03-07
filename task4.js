@@ -24,7 +24,7 @@ function mostOften(arr)
         max_count = curr_count;
         res = arr[n - 1];
     }
-    return res;
+    return rets;
 }
 
-console.log(mostOften([1, 2, 2, 2, 2, 3, 7]))
+console.log(mostOften([5, 5, 5, 5, 5, 2, 1]))
