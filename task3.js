@@ -1,4 +1,4 @@
-function sortOnByBy(arr) {
+function sortOneByBy(arr) {
     let index = 0;
     for (let i = 1; i < arr.length; i++) {
         const element = arr[i];
@@ -14,4 +14,4 @@ function sortOnByBy(arr) {
     }
     return arr;
 }
-console.log(sortOnByBy([3,2,6,4,5,1,7]))
+console.log(sortOneByBy([3,2,6,4,5,1,7]))

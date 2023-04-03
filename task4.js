@@ -1,30 +1,21 @@
-function mostOften(arr)
-{
-    let n = arr.lenght;
-    arr.sort();
-    let max_count = 1, res = arr[0];
-    let curr_count = 1;
-    for (let i = 1; i < n; i++)
-    {
-        if (arr[i] == arr[i - 1])
-            curr_count++;
-        else
-        {
-            if (curr_count > max_count)
-            {
-                max_count = curr_count;
-                res = arr[i - 1];
-            }
-            curr_count = 1;
-        }
+function findMostFrequent(arr) {
+    let map = new Map();
+    let maxElement = arr[0];
+    let maxCount = 1;
+  
+    for (let i = 0; i < arr.length; i++) {
+      let element = arr[i];
+      let count = (map.get(element) || 0) + 1;
+      map.set(element, count);
+      if (count > maxCount) {
+        maxElement = element;
+        maxCount = count;
+      }
     }
+  
+    return maxElement;
+  }
 
-    if (curr_count > max_count)
-    {
-        max_count = curr_count;
-        res = arr[n - 1];
-    }
-    return rets;
-}
-
-console.log(mostOften([5, 5, 5, 5, 5, 2, 1]))
+  let arr = [1, 3, 3, 3, 24];
+  let mostFrequent = findMostFrequent(arr);
+  console.log(mostFrequent); 
