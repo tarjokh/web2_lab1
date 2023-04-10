@@ -1,15 +1,15 @@
 let delivereds = new Array()
 class Delivereds {
-    constructor(project, performer, start, end) {
-        this.project = project;
-        this.performer = performer;
+    constructor(name, weight, start, end) {
+        this.name = name;
+        this.weight = weight;
         this.start = start;
         this.end = end;
     }
 
 }
-const createDelivered = (project, performer, start, end) => {
-    let delivered = new Delivereds(project, performer, start, end)
+const createDelivered = (name, weight, start, end) => {
+    let delivered = new Delivereds(name, weight, start, end)
     return delivered
 }
 const addDelivered = (delivered) => {
@@ -28,11 +28,6 @@ const deleteDelivered = (code) => {
             return
 }
 
-// const findDelivered = (code) => {
-//     let index = customers.findIndex(x => x.code === code);
-//         if (index === -1) return -1
-//         else return delivereds[index]
-// }
 
 export default { delivereds, addDelivered, changeDelivered, deleteDelivered, createDelivered }
 

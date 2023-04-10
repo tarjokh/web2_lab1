@@ -2,7 +2,7 @@ import space_stations from "./custom_modules/space_station.js"
 import planets from "./custom_modules/planet.js"
 import cargos from "./custom_modules/cargo.js"
 import delivereds from "./custom_modules/delivered.js"
-// const mod = require('custom_module');
+
 
 const findAllSpace_stations = (stationCode) => {
     let arr = []
@@ -30,36 +30,36 @@ space_stations.changeSpace_station(1, "newStat", 12221)
 space_stations.deleteSpace_station(2)
 
 console.log("Find: ", space_stations.findSpace_station(1))
+console.log("All: " , space_stations.space_stations)
+findAllSpace_stations(stat3.code)
 
-
-const proj1 = planets.CreatePlanet("pr1", code, "pr1desc", 1)
-const proj2 = planets.CreatePlanet("pr2", code, "pr2desc", 1)
-const proj3 = planets.CreatePlanet("pr3", code, "pr2desc", 1)
-planets.addPlanet(proj1)
-planets.addPlanet(proj2)
-planets.addPlanet(proj3)
-planets.changePlanet(4, "newpr1", 'newdesc1', 1)
-planets.deletePlanet(proj2.code)
+const plan1 = planets.CreatePlanet("Eqrs", code, "human", 1)
+const plan2 = planets.CreatePlanet("Winus", code, "alian", 2)
+const plan3 = planets.CreatePlanet("Jupiter", code, "juteroids", 3)
+planets.addPlanet(plan1)
+planets.addPlanet(plan2)
+planets.addPlanet(plan3)
+planets.changePlanet(4, "Eqrs", 'human', 1)
+planets.deletePlanet(plan2.code)
 
 console.log("Find: ", planets.findPlanet(1))
+console.log("All: " , planets.planets)
 
 
-const perf1 = cargos.createCargo('perf1', code, 1, 11)
-const perf2 = cargos.createCargo('perf2', code, 2, 22)
-cargos.addCargo(perf1)
-cargos.addCargo(perf2)
-cargos.changeCargo(7, 'perf1.1', 3, 33)
+const carr1 = cargos.createCargo('carr1', code, 1, 11)
+const carr2 = cargos.createCargo('carr2', code, 2, 22)
+cargos.addCargo(carr1)
+cargos.addCargo(carr2)
+cargos.changeCargo(7, 'carr1.1', 3, 33)
 cargos.deleteCargo(8)
 
+console.log(cargos.cargos)
 
-const act1 = delivereds.createDelivered(proj1.code, perf1.code, 2022, 2025)
-const act2 = delivereds.createDelivered(proj2.code, perf1.code, 2022, 2035)
-delivereds.addDelivered(act1)
-delivereds.addDelivered(act2)
+const dell1 = delivereds.createDelivered(plan1.code, carr1.code, 2022, 2025)
+const dell2 = delivereds.createDelivered(plan2.code, carr1.code, 2022, 2035)
+delivereds.addDelivered(dell1)
+delivereds.addDelivered(dell2)
 
-
-findAllSpace_stations(stat1.code)
-
-
+console.log(delivereds.delivereds)
 
 
