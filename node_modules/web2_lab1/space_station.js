@@ -1,26 +1,26 @@
 let space_stations = new Array()
 class Space_station {
-    constructor(name, lvl, code) {
+    constructor(name, level, code) {
         this.name = name;
-        this.lvl = lvl;
+        this.level = level;
         this.code = code.key
     }
 }
-const createSpace_station = (name, lvl, code) => {
-    let space_station = new Space_station(name, lvl, code)
+const createSpace_station = (name, level, code) => {
+    let space_station = new Space_station(name, level, code)
     code.key++
     return space_station
 }
 const addSpace_station = (space_station) => {
     space_stations.push(space_station)
 }
-const changeSpace_station = (code, newName, newLvl) => {
+const changeSpace_station = (code, newName, newLevel) => {
     let index = space_stations.findIndex(x => x.code === code);
             if (newName !== undefined) {
                 space_stations[index].name = newName
             }
-            if (newLvl !== undefined) {
-                space_stations[index].lvl = newLvl
+            if (newLevel !== undefined) {
+                space_stations[index].lvl = newLevel
             }
             return 0
     }
