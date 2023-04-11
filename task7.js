@@ -6,8 +6,8 @@ import delivereds from "./custom_modules/delivered.js"
 
 const findAllSpace_stations = (planetCode) => {
     let arr = []
-    for (let i = 0; i < space_stations.space_stations.length; i++) {
-        if (space_stations.space_stations[i].planet === planetCode) arr.push(space_stations.space_stations[i])
+    for (let i = 0; i < planets.planets.length; i++) {
+        if (planets.planets[i].space_station === planetCode) arr.push(planets.planets[i])
     }
     if (arr.length > 0) {
         console.log("Space station: ", arr)
@@ -27,22 +27,23 @@ space_stations.addSpace_station(stat1)
 space_stations.addSpace_station(stat2)
 space_stations.addSpace_station(stat3)
 space_stations.changeSpace_station(1, "newStat", 1221)
-// space_stations.deleteSpace_station(2)
+space_stations.deleteSpace_station(2)
 
 console.log("Find: ", space_stations.findSpace_station(2))
 console.log("All: " , space_stations.space_stations)
 
 
 const plan1 = planets.CreatePlanet("Ears", code, "human", 1)
-const plan2 = planets.CreatePlanet("Winus", code, "alian", 2)
-const plan3 = planets.CreatePlanet("Jupiter", code, "juteroids", 3)
+const plan2 = planets.CreatePlanet("Winus", code, "alian", 1)
+const plan3 = planets.CreatePlanet("Jupiter", code, "juteroids", 1)
+
 planets.addPlanet(plan1)
 planets.addPlanet(plan2)
 planets.addPlanet(plan3)
 planets.changePlanet(4, "Ears", 'human', 1)
-// planets.deletePlanet(plan2.code)
+planets.deletePlanet(plan2.code)
 
-console.log("Find: ", planets.findPlanet(3))
+console.log("Find: ", planets.findPlanet(4))
 console.log("All: " , planets.planets)
 
 
@@ -51,7 +52,7 @@ const carr2 = cargos.createCargo('carr2', code, 2, 22)
 cargos.addCargo(carr1)
 cargos.addCargo(carr2)
 cargos.changeCargo(7, 'carr1.1', 3, 33)
-// cargos.deleteCargo(8)
+cargos.deleteCargo(8)
 
 console.log(cargos.cargos)
 
@@ -61,6 +62,7 @@ delivereds.addDelivered(dell1)
 delivereds.addDelivered(dell2)
 
 console.log(delivereds.delivereds)
-findAllSpace_stations(stat3.code)
+
+findAllSpace_stations(plan2.space_station)
 
 

@@ -30,7 +30,12 @@ const changePlanet = (code, newName, newDescription, newSpace_station) => {
 }
 const deletePlanet = (code) => {
     let index = planets.findIndex(x => x.code === code);
-    planets.splice(index, 1)
+    if(index === -1){
+        return -1
+    }
+    else{
+     planets.splice(index, 1)
+    }
 }
 const findPlanet = (code) => {
     let index = planets.findIndex(x => x.code === code);
